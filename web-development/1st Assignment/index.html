@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A semantic, single‑file portfolio website demonstrating broad HTML5 tag usage for an academic semester project." />
+  <title>Hafiz Muhammad Asad Mustafa — Web Developer</title>
+  <link rel="preload" as="image" href="hero.jpg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header role="banner">
+    <div class="container">
+      <nav aria-label="Primary">
+        <div class="brand">
+          <img src="avatar.png" alt="Portrait of Hafiz Muhammad Asad Mustafa"/>
+          <strong><span itemprop="name">Hafiz Muhammad Asad Mustafa</span></strong>
+        </div>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero container" id="about">
+    <div>
+      <span class="badge" role="note">⚛️ <small>Web Developer</small></span>
+      <h1>Crafting delightful, fast, accessible web apps</h1>
+      <p>I build modern interfaces with <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and JavaScript. I enjoy <mark>performance</mark>, <em>accessibility</em>, and great developer experience.</p>
+      <p>Based in <time datetime="2025-10">Oct 2025</time>, open to roles in <bdi>Karachi</bdi> &amp; remote. <small>(This page intentionally uses many semantic tags to satisfy course requirements.)</small></p>
+      <div class="kpis">
+        <label>Portfolio completeness
+          <progress value="82" max="100">82%</progress>
+        </label>
+        <label>Learning progress
+          <meter min="0" low="0.4" high="0.8" max="1" optimum="0.9" value="0.75">75%</meter>
+        </label>
+      </div>
+      <p>
+        <a class="button" href="#projects" role="button">View My Work</a>
+        <a class="button" href="#contact" role="button">Get in Touch</a>
+      </p>
+      <details>
+        <summary>Fun fact</summary>
+        <p>I once optimized a page to a <data value="100">perfect Lighthouse score</data> on mobile.</p>
+      </details>
+    </div>
+    <figure>
+      <picture>
+        <source srcset="hero.avif" type="image/avif" />
+        <source srcset="hero.webp" type="image/webp" />
+        <img src="hero.jpg" alt="Laptop on desk with code and design sketches" width="540" height="360" />
+      </picture>
+      <figcaption>My minimalist setup — photo by <cite>Hafiz Muhammad Asad Mustafa</cite>.</figcaption>
+    </figure>
+  </section>
+
+  <main id="main" class="container" role="main">
+    <section id="skills" aria-labelledby="skills-h2">
+      <h2 id="skills-h2">Technical Expertise</h2>
+      <div class="grid cols-3">
+        <article class="card" aria-labelledby="fe-h3">
+          <h3 id="fe-h3">Frontend Development</h3>
+          <ul>
+            <li>HTML5, semantic structure</li>
+            <li>CSS3 (Flexbox, Grid, Animations)</li>
+            <li>JavaScript (ES2023+)</li>
+          </ul>
+          <p>Strength: <output id="out-fe" for="range-fe">95</output>%</p>
+          <input id="range-fe" type="range" min="0" max="100" value="95" />
+        </article>
+        <article class="card" aria-labelledby="be-h3">
+          <h3 id="be-h3">Backend &amp; APIs</h3>
+          <ol>
+            <li>Node.js, Express</li>
+            <li>REST &amp; GraphQL</li>
+            <li>SQL/NoSQL</li>
+          </ol>
+          <p><var>DB</var> experience ≈ <samp>PostgreSQL, MongoDB</samp></p>
+        </article>
+        <article class="card" aria-labelledby="devops-h3">
+          <h3 id="devops-h3">Performance &amp; DevOps</h3>
+          <p>CI/CD · Docker · Testing</p>
+          <blockquote cite="https://www.w3.org/TR/WCAG21/">“Fast is a feature.”</blockquote>
+          <p><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd> to open DevTools</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-h2">
+      <h2 id="projects-h2">Featured Projects</h2>
+      <div class="grid cols-2">
+        <article class="card">
+          <header>
+            <h3>E‑commerce PWA</h3>
+            <p class="pill">Offline, IndexedDB, Code‑split</p>
+          </header>
+          <figure>
+            <img src="pwa.png" alt="E‑commerce PWA screenshot" width="640" height="360" />
+            <figcaption>Lighthouse: <strong>Performance 98</strong>, <strong>Accessibility 100</strong>, <strong>SEO 100</strong></figcaption>
+          </figure>
+          <section>
+            <h4>Technical Implementation</h4>
+            <ul>
+              <li>Service Worker</li>
+              <li>IndexedDB offline cache</li>
+              <li>Streaming SSR</li>
+              <li>Dynamic import()</li>
+            </ul>
+          </section>
+          <footer>
+            <a class="button" href="#" aria-label="Open project E‑commerce PWA">Live</a>
+            <a class="button" href="#">Code</a>
+          </footer>
+        </article>
+        <article class="card">
+          <header>
+            <h3>Realtime Collaboration</h3>
+            <p class="pill">WebSocket, CRDT, WebRTC</p>
+          </header>
+          <figure>
+            <img src="rtc.png" alt="Realtime app screenshot" width="640" height="360" />
+            <figcaption>Latency: &lt; <sub>50</sub>ms, Availability: 99.<sup>95</sup>%</figcaption>
+          </figure>
+          <section>
+            <h4>Highlights</h4>
+            <ul>
+              <li>Conflict‑free data types</li>
+              <li>Optimistic UI</li>
+              <li>Custom state management</li>
+            </ul>
+          </section>
+          <footer>
+            <a class="button" href="#">Live</a>
+            <a class="button" href="#">Code</a>
+          </footer>
+        </article>
+      </div>
+    </section>
+
+    <section id="timeline" aria-labelledby="timeline-h2">
+      <h2 id="timeline-h2">Learning Timeline</h2>
+      <div class="table-wrap">
+        <table>
+          <caption class="visually-hidden">Milestones and dates</caption>
+          <thead>
+            <tr>
+              <th scope="col">When</th>
+              <th scope="col">Milestone</th>
+              <th scope="col">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><time datetime="2024-09">Sep 2024</time></th>
+              <td>Started Web Fundamentals</td>
+              <td><dfn title="Document Object Model">DOM</dfn> basics, forms, semantics</td>
+            </tr>
+            <tr>
+              <th scope="row"><time datetime="2025-02">Feb 2025</time></th>
+              <td>Built First SPA</td>
+              <td>Routing, fetch API, accessibility checks</td>
+            </tr>
+            <tr>
+              <th scope="row"><time datetime="2025-07">Jul 2025</time></th>
+              <td>Performance &amp; PWA</td>
+              <td>Service Workers, caching strategies</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3"><small>Updated <time datetime="2025-10-13">Oct 13, 2025</time></small></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="two-col" aria-label="Case Study + Aside">
+      <article class="card">
+        <h2>Case Study: From Mockup to Production</h2>
+        <p>We transformed a <em>static mockup</em> into a <strong>highly‑interactive</strong> app. Below is a simplified snippet:</p>
+        <pre aria-label="Sample code"><code>&lt;button class="btn" aria-busy="false"&gt;Submit&lt;/button&gt;
+// attach event listener
+button.addEventListener('click', () =&gt; {
+  button.setAttribute('aria-busy','true');
+  // async work...
+});
+</code></pre>
+        <p>Accessibility checklist covered <u>focus</u> states, landmarks, and color contrast.</p>
+      </article>
+      <aside class="card" aria-label="Quick facts">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li>Tech: <code>HTML</code>, <code>CSS</code>, <code>JS</code></li>
+          <li>Tools: <code>Git</code>, <code>Vite</code></li>
+          <li>Fav tag: <code>&lt;details&gt;</code></li>
+        </ul>
+        <p>Quotation: <q cite="https://web.dev/">Measure, then improve.</q></p>
+      </aside>
+    </section>
+
+    <section aria-labelledby="media-h2">
+      <h2 id="media-h2">Media</h2>
+      <div class="grid cols-2">
+        <figure class="card">
+          <figcaption>Introduction (MP4)</figcaption>
+          <video controls width="100%" preload="metadata">
+            <source src="intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+        <figure class="card">
+          <figcaption>Podcast (MP3)</figcaption>
+          <audio controls preload="metadata">
+            <source src="podcast.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </figure>
+      </div>
+      <figure class="card" aria-labelledby="canvas-h3">
+        <h3 id="canvas-h3">Canvas Demo</h3>
+        <canvas id="dotCanvas" width="640" height="160" aria-label="Animated dots"></canvas>
+        <figcaption>Simple animation using the <code>&lt;canvas&gt;</code> element.</figcaption>
+      </figure>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-h2">
+      <h2 id="contact-h2">Let’s Build Something</h2>
+      <form method="post" action="#" autocomplete="on">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required />
+
+        <label for="topic">Topic</label>
+        <select id="topic" name="topic">
+          <option>Project Inquiry</option>
+          <option>Collaboration</option>
+          <option>Speaking</option>
+        </select>
+
+        <fieldset class="card" style="padding:12px">
+          <legend>Project type</legend>
+          <label><input type="radio" name="ptype" value="web" checked /> Web App</label>
+          <label><input type="radio" name="ptype" value="site" /> Website</label>
+          <label><input type="radio" name="ptype" value="pwa" /> PWA</label>
+        </fieldset>
+
+        <label for="budget">Budget (USD)</label>
+        <input id="budget" name="budget" type="number" min="0" step="100" />
+
+        <label for="start">Preferred start date</label>
+        <input id="start" name="start" type="date" />
+
+        <label for="file">Attach brief (PDF)</label>
+        <input id="file" name="file" type="file" accept="application/pdf" />
+
+        <label for="msg">Message</label>
+        <textarea id="msg" name="message" rows="4" placeholder="Tell me about your idea..."></textarea>
+
+        <button class="button" type="submit">Send Message</button>
+        <output id="formStatus" aria-live="polite"></output>
+      </form>
+      <address>
+        Hafiz Muhammad Asad Mustafa · <a href="mailto:hafizasad2554@gmail.com">hafizasad2554@gmail.com</a> · The Islamia University of Bahawalpur
+      </address>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>&copy; <time datetime="2025">2025</time> Hafiz Muhammad Asad Mustafa. Built with semantic HTML. <span dir="rtl">مرحبا</span></p>
+      <p>Inspired by modern developer portfolios.
+        <small>Template demonstrates tags: header/nav/main/section/article/aside/footer/figure/figcaption/picture/source/time/address/progress/meter/details/summary/data/dfn/abbr/mark/bdi/sub/sup/q/blockquote/var/samp/kbd/code/pre/table/caption/thead/tbody/tfoot/video/audio/canvas/form/fieldset/legend/input/select/textarea/button/output.</small>
+      </p>
+    </div>
+  </footer>
+
+  <template id="card-template">
+    <article class="card"><h3></h3><p></p></article>
+  </template>
+  <dialog id="okDialog" aria-label="Confirmation">
+    <p>Form submitted! I’ll be in touch.</p>
+    <form method="dialog"><button class="button">Close</button></form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>

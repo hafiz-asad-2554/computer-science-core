@@ -1,0 +1,12 @@
+DELIMITER // CREATE FUNCTION GetVerdict(cgpa DECIMAL(3, 2)) RETURNS VARCHAR(20) DETERMINISTIC BEGIN
+DECLARE verdict VARCHAR(20);
+IF cgpa >= 2.0 THEN
+SET verdict = 'Pass';
+ELSE
+SET verdict = 'Fail';
+END IF;
+RETURN verdict;
+END // DELIMITER;
+SELECT Name,
+    GetVerdict(CGPA)
+FROM Students;

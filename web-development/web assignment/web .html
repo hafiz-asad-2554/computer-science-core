@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Complete Web Dev Demo</title>
+
+<style>
+    body { font-family: Arial; margin: 20px; }
+    .box { width: 150px; height: 150px; background: lightblue; margin: 10px; padding: 10px; border: 2px solid #000; }
+    #colorBox { width: 150px; height: 150px; background: orange; }
+    .flex-demo {
+        display: flex;
+        justify-content: space-around;
+        background: #eee;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .grid-demo {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 10px;
+        background: #ddd;
+        padding: 10px;
+    }
+    .grid-demo div {
+        background: pink; 
+        padding: 10px;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>All-in-One Web Development Demo</h1>
+<p>This page shows HTML, CSS & JavaScript ALL IN ONE PAGE.</p>
+
+<hr>
+
+<h2>HTML Basic Tags</h2>
+
+<h3>Headings</h3>
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+
+<h3>Paragraph</h3>
+<p>This is a paragraph demonstrating the basic HTML text element.</p>
+
+<h3>Link Tag</h3>
+<a href="#">This is a link</a>
+
+<h3>Image Tag</h3>
+<img src="https://via.placeholder.com/120" alt="Example Image">
+
+<h3>List Tags</h3>
+<ul>
+    <li>Unordered List Item 1</li>
+    <li>Unordered List Item 2</li>
+</ul>
+
+<ol>
+    <li>Ordered Item 1</li>
+    <li>Ordered Item 2</li>
+</ol>
+
+<h3>Table Tag</h3>
+<table border="1" cellpadding="5">
+    <tr><th>Name</th><th>Age</th></tr>
+    <tr><td>Ali</td><td>20</td></tr>
+    <tr><td>Asad</td><td>22</td></tr>
+</table>
+
+<hr>
+
+<h2>CSS Properties Demo</h2>
+
+<div class="box">This is a Box (Width, Height, Border, Padding, Margin)</div>
+
+<h3>Flexbox</h3>
+<div class="flex-demo">
+    <div class="box">Flex 1</div>
+    <div class="box">Flex 2</div>
+    <div class="box">Flex 3</div>
+</div>
+
+<h3>Grid</h3>
+<div class="grid-demo">
+    <div>Grid 1</div>
+    <div>Grid 2</div>
+    <div>Grid 3</div>
+</div>
+
+<h3>Color Change (CSS + JS)</h3>
+<div id="colorBox"></div>
+<button onclick="changeColor()">Change Color</button>
+
+<hr>
+
+<h2>JavaScript Demo</h2>
+
+<button onclick="showAlert()">Show Alert</button>
+<br><br>
+
+<input type="text" id="nameInput" placeholder="Type your name">
+<button onclick="showName()">Show Entered Name</button>
+
+<p id="output"></p>
+
+<script>
+function showAlert() {
+    alert("This is JavaScript Alert!");
+}
+
+function showName() {
+    let name = document.getElementById("nameInput").value;
+    document.getElementById("output").innerText = "You typed: " + name;
+}
+
+function changeColor() {
+    document.getElementById("colorBox").style.background = "green";
+}
+</script>
+
+<hr>
+
+<h2>HTML Form + PHP (for real server)</h2>
+
+<form action="process.php" method="post">
+    <input type="text" name="username" placeholder="Enter Name"><br><br>
+    <input type="submit" value="Submit Form">
+</form>
+
+<p><b>Note:</b> PHP will only run if uploaded on a server (XAMPP or Hosting).</p>
+
+</body>
+</html>

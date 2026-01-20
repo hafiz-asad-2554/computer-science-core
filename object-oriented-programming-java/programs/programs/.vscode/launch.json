@@ -1,0 +1,93 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Broken",
+            "request": "launch",
+            "mainClass": "Broken",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "CircleExample",
+            "request": "launch",
+            "mainClass": "CircleExample",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "Ex_finding_avg",
+            "request": "launch",
+            "mainClass": "Ex_finding_avg",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "FindingMin",
+            "request": "launch",
+            "mainClass": "FindingMin",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "Main2",
+            "request": "launch",
+            "mainClass": "Main2",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "Snowman",
+            "request": "launch",
+            "mainClass": "Snowman",
+            "projectName": "programs_2d55b8a9",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-22.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "StringManipulation",
+            "request": "launch",
+            "mainClass": "StringManipulation",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "StringManipulation2",
+            "request": "launch",
+            "mainClass": "StringManipulation2",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "StringManipulation3",
+            "request": "launch",
+            "mainClass": "StringManipulation3",
+            "projectName": "programs_2d55b8a9"
+        },
+        {
+            "type": "java",
+            "name": "StringManipulation4",
+            "request": "launch",
+            "mainClass": "StringManipulation4",
+            "projectName": "programs_2d55b8a9"
+        }
+    ]
+}

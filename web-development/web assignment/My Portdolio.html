@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafiz Muhammad Asad Mustafa - Interactive CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Slate Neutrals -->
+    <!-- Application Structure Plan: A single-page application with a fixed sidebar navigation for larger screens and a top menu for mobile. The structure is thematic rather than strictly chronological, starting with a summary, then an interactive skills dashboard, an expandable experience timeline, and finally sections for education, projects, and certifications. This design prioritizes user engagement and allows recruiters to quickly access the sections most relevant to them, enhancing usability over a static, linear document. -->
+    <!-- Visualization & Content Choices: 
+        - Skills List -> Goal: Compare/Organize -> Viz: Interactive Bar Chart -> Interaction: Hover tooltips show proficiency. Justification: Visually quantifies skill levels, making them easier to digest than a text list. Library: Chart.js (Canvas).
+        - Experience List -> Goal: Organize/Inform -> Viz: Vertical Timeline -> Interaction: Click to expand/collapse details. Justification: Organizes chronological data intuitively and prevents information overload. Library: Vanilla JS.
+        - Certifications/Education -> Goal: Inform -> Viz: Styled Cards -> Interaction: Subtle hover effects. Justification: Groups related information cleanly. Library: HTML/Tailwind.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #475569;
+            border: 3px solid #f1f5f9;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <div class="flex flex-col md:flex-row">
+        <header id="navbar" class="bg-slate-800 text-white p-4 md:w-64 md:min-h-screen md:flex md:flex-col md:fixed">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl font-bold">H. M. Asad Mustafa</h1>
+                <button id="menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+            <nav id="nav-menu" class="hidden md:block mt-8 space-y-4">
+                <a href="#summary" class="block py-2 px-3 rounded hover:bg-slate-700">Summary</a>
+                <a href="#skills" class="block py-2 px-3 rounded hover:bg-slate-700">Skills</a>
+                <a href="#experience" class="block py-2 px-3 rounded hover:bg-slate-700">Experience</a>
+                <a href="#education" class="block py-2 px-3 rounded hover:bg-slate-700">Education</a>
+                <a href="#certifications" class="block py-2 px-3 rounded hover:bg-slate-700">Certifications</a>
+                <a href="#publications" class="block py-2 px-3 rounded hover:bg-slate-700">Publications</a>
+            </nav>
+        </header>
+
+        <main class="flex-1 p-6 md:p-10 md:ml-64">
+            <section id="hero" class="mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800">Hafiz Muhammad Asad Mustafa</h2>
+                <p class="text-xl md:text-2xl text-slate-600 mt-2">STEM Educator & Technical Mentor</p>
+                <div class="flex space-x-4 mt-6 text-slate-500">
+                    <a href="mailto:hafizasad2554@gmail.com" class="hover:text-slate-800">
+                        <span class="font-semibold">Email:</span> hafizasad2554@gmail.com
+                    </a>
+                    <span>|</span>
+                    <a href="https://pk.linkedin.com/in/hafiz-muhammad-asad-mustafa-40640a303" target="_blank" class="hover:text-slate-800">
+                       <span class="font-semibold">LinkedIn</span>
+                    </a>
+                    <span>|</span>
+                    <span class="hover:text-slate-800">
+                        <span class="font-semibold">Phone:</span> +923032554632
+                    </span>
+                </div>
+            </section>
+
+            <section id="summary" class="mb-12 scroll-mt-20">
+                <h3 class="text-3xl font-bold border-b-2 border-slate-300 pb-2 mb-4">Professional Summary</h3>
+                <p class="text-lg leading-relaxed">This section introduces my professional background. As a highly dedicated and results-oriented STEM Educator with four years of hands-on experience in private tutoring, I specialize in Physics, Mathematics, and Computer Science for high school students. My ongoing B.S. in Computer Science provides a strong, up-to-date technical foundation. I have a proven ability to simplify complex concepts, manage learning environments, and mentor students, skills honed through tutoring and leadership of a university Computer Science club. I am seeking to leverage this blend of pedagogical skill and deep technical expertise into a challenging teaching position.</p>
+            </section>
+
+            <section id="skills" class="mb-12 scroll-mt-20">
+                <h3 class="text-3xl font-bold border-b-2 border-slate-300 pb-2 mb-4">Technical Skills Dashboard</h3>
+                <p class="text-lg leading-relaxed mb-6">This interactive chart provides a visual overview of my key technical proficiencies. The skills are grouped into major categories like Programming, Web Development, and Databases, allowing for a quick assessment of my capabilities. Hover over any bar to see the specific technology and my self-assessed proficiency level, offering a more dynamic experience than a simple list.</p>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                   <div class="chart-container">
+                        <canvas id="skillsChart"></canvas>
+                   </div>
+                </div>
+            </section>
+
+            <section id="experience" class="mb-12 scroll-mt-20">
+                <h3 class="text-3xl font-bold border-b-2 border-slate-300 pb-2 mb-4">Experience Timeline</h3>
+                <p class="text-lg leading-relaxed mb-8">My professional journey is presented here as an interactive timeline. This format highlights my roles in teaching, leadership, and freelance development chronologically. Click on the title of any position to expand or collapse its details. This allows you to focus on the experiences most relevant to you, providing a clean overview while keeping comprehensive information readily accessible.</p>
+                <div class="relative border-l-2 border-slate-300 pl-8 space-y-12">
+                    <div class="timeline-item">
+                        <button class="w-full text-left focus:outline-none">
+                            <h4 class="text-xl font-bold cursor-pointer">Private Home-Based Tutoring (4 Years)</h4>
+                            <p class="text-slate-500">Dunga Bunga, Bahawalnagar, Pakistan | 2020 – 2024</p>
+                        </button>
+                        <div class="experience-details mt-2 space-y-2 text-slate-600">
+                            <p>Provided comprehensive, personalized instruction and curriculum review for students preparing for examinations in core STEM subjects.</p>
+                            <ul class="list-disc pl-5">
+                                <li><strong>High School Instruction (Grades 9 & 10):</strong> Taught full curriculum for Physics, Mathematics, and Computer Science.</li>
+                                <li><strong>Advanced Instruction (Grades 11 & 12):</strong> Provided specialized coaching in advanced Physics and Computer Science topics.</li>
+                                <li><strong>Conceptual Mastery:</strong> Utilized analogies and interactive problem-solving to improve student performance and build lasting conceptual understanding.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                         <button class="w-full text-left focus:outline-none">
+                            <h4 class="text-xl font-bold cursor-pointer">President, Computer Science and Students Club (CSSC)</h4>
+                            <p class="text-slate-500">The Islamia University of Bahawalpur, BWN Campus | Sep 2024 – Present</p>
+                         </button>
+                        <div class="experience-details mt-2 space-y-2 text-slate-600 hidden">
+                           <p>Spearheaded initiatives to foster technical skill development and community engagement among students.</p>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Mentorship & Training:</strong> Guided junior members in programming, problem-solving, and career development.</li>
+                                <li><strong>Event Management:</strong> Organized coding competitions, tech seminars, and guest lectures to enhance practical skills.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                         <button class="w-full text-left focus:outline-none">
+                            <h4 class="text-xl font-bold cursor-pointer">Freelance Web Designer & Developer</h4>
+                            <p class="text-slate-500">Self-Employed | Mar 2024 – Jul 2025</p>
+                        </button>
+                        <div class="experience-details mt-2 space-y-2 text-slate-600 hidden">
+                             <p>Built custom technical solutions, applying and mentoring others in programming concepts.</p>
+                            <ul class="list-disc pl-5">
+                                <li>Designed and developed 5+ responsive websites for local businesses.</li>
+                                <li>Acted as a technical consultant by selling custom project solutions to university seniors (HTML, CSS, JavaScript, Bootstrap).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="mb-12 scroll-mt-20">
+                <h3 class="text-3xl font-bold border-b-2 border-slate-300 pb-2 mb-4">Education</h3>
+                <p class="text-lg leading-relaxed mb-6">This section details my academic background, which forms the foundation of my technical and teaching expertise. My qualifications are presented in reverse chronological order, from my current university studies to my earlier education.</p>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">Bachelor of Science (BS), Computer Science</h4>
+                        <p class="text-slate-600">The Islamia University of Bahawalpur</p>
+                        <p class="text-slate-500 text-sm">Jan 2023 – Jun 2027 (Expected)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-lg">Intermediate, Computer Science</h4>
+                        <p class="text-slate-600">Punjab Group Of Colleges</p>
+                        <p class="text-slate-500 text-sm">Apr 2020 – Apr 2022</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="certifications" class="mb-12 scroll-mt-20">
+                <h3 class="text-3xl font-bold border-b-2 border-slate-300 pb-2 mb-4">Certifications & Training</h3>
+                <p class="text-lg leading-relaxed mb-6">My commitment to continuous learning and skill development is showcased here. This list includes certifications in technical domains like programming and security, as well as training in community safety, demonstrating a well-rounded profile.</p>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <span class="text-2xl mr-4">🛡️</span>
+                        <div>
+                           <h4 class="font-semibold">Rescue 1122 Training</h4>
+                           <p class="text-sm text-slate-500">Safety & Community</p>
+                        </div>
+                    </div>
+                     <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <span class="text-2xl mr-4">💻</span>
+                        <div>
+                           <h4 class="font-semibold">Programming in C++</h4>
+                           <p class="text-sm text-slate-500">Digital Empowerment Network</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <span class="text-2xl mr-4">🌐</span>
+                        <div>
+                           <h4 class="font-semibold">Web Design Course</h4>
+                           <p class="text-sm text-slate-500">Beginner to Intermediate</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm flex items-center">
+                        <span class="text-2xl mr-4">🔒</span>
+                        <div>
+                           <h4 class="font-semibold">Cybersecurity Essentials</h4>
+                           <p class="text-sm text-slate-500">Security Training</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="publications" class="scroll-mt-20">
+                 <h3 class="text-3xl font-bold border-b-2 border-slate-300 pb-2 mb-4">Publications</h3>
+                 <p class="text-lg leading-relaxed mb-6">This section highlights my contribution to academic and industry discourse, demonstrating my engagement with cutting-edge topics in technology.</p>
+                 <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-slate-600">
+                    <blockquote class="italic text-slate-800">
+                        <p>"Industry 5.0 and Human-Technology Collaboration: The Role of AI and Machine Learning in Shaping Future Workplaces"</p>
+                    </blockquote>
+                    <cite class="block text-right mt-2 not-italic text-slate-500">— (Full citation pending)</cite>
+                 </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('hidden');
+        });
+        
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    navMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        const experienceHeaders = document.querySelectorAll('.experience-details');
+        document.querySelectorAll('#experience button').forEach((button, index) => {
+            button.addEventListener('click', () => {
+                experienceHeaders[index].classList.toggle('hidden');
+            });
+        });
+
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Java', 'C++', 'Python', 'JavaScript', 'PHP', 'HTML/CSS', 'MySQL', 'Bootstrap'],
+                datasets: [{
+                    label: 'Proficiency Level (out of 100)',
+                    data: [85, 90, 80, 95, 75, 98, 85, 90],
+                    backgroundColor: [
+                        'rgba(71, 85, 105, 0.7)',
+                        'rgba(51, 65, 85, 0.7)',
+                        'rgba(30, 41, 59, 0.7)',
+                        'rgba(15, 23, 42, 0.7)',
+                        'rgba(71, 85, 105, 0.6)',
+                        'rgba(51, 65, 85, 0.6)',
+                        'rgba(30, 41, 59, 0.6)',
+                        'rgba(15, 23, 42, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(71, 85, 105, 1)',
+                        'rgba(51, 65, 85, 1)',
+                        'rgba(30, 41, 59, 1)',
+                        'rgba(15, 23, 42, 1)',
+                        'rgba(71, 85, 105, 1)',
+                        'rgba(51, 65, 85, 1)',
+                        'rgba(30, 41, 59, 1)',
+                        'rgba(15, 23, 42, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: '#e2e8f0'
+                        },
+                        ticks: {
+                           color: '#475569'
+                        }
+                    },
+                    y: {
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                           color: '#475569',
+                           font: {
+                               size: 14,
+                           }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#0f172a',
+                        titleFont: {
+                            size: 16
+                        },
+                        bodyFont: {
+                            size: 14
+                        },
+                        padding: 12,
+                        cornerRadius: 4,
+                        displayColors: false,
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

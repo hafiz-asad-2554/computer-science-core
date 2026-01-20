@@ -1,0 +1,6 @@
+CREATE TABLE Teachers (
+    TeacherID INT PRIMARY KEY,
+    Email VARCHAR(100) UNIQUE NOT NULL,
+    Age INT CHECK (Age > 22),
+    JoinDate DATE DEFAULT CURRENT_DATE
+);

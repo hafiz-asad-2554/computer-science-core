@@ -1,0 +1,11 @@
+.setting {
+    -fx-padding: 40px;
+    padding: 40px;
+    -fx-background-color: red;
+    background-color: red;
+}
+
+.label {
+    -fx-text-fill: green;
+}
+

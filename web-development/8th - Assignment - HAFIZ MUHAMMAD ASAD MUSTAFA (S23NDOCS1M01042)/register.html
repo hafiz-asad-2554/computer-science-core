@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Daa'am-ul-Hayat</title>
+  <link rel="icon" type="image/x-icon" href="logo.png">
+  <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+  <div class="container">
+    <form class="form-box" id="registerForm">
+      <h2>Register for Daa'am-ul-Hayat</h2>
+
+      <label>Full Name</label>
+      <input type="text" id="username" placeholder="e.g. Hafiz Muhammad Asad Mustafa" required>
+      <small class="error"></small>
+
+      <label>I am registering as</label>
+      <select id="role" required>
+        <option value="">-- Select Role --</option>
+        <option>Standard User (Donor/Volunteer)</option>
+        <option>NGO/Platform Admin (Requires approval)</option>
+      </select>
+
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="hafizasad2554@gmail.com" required>
+      <small class="error"></small>
+
+      <label>Password</label>
+      <input type="password" id="password" required>
+      <small class="error"></small>
+
+      <label>Confirm Password</label>
+      <input type="password" id="confirmPassword" required>
+      <small class="error"></small>
+
+      <button type="submit">Register Account</button>
+      <p>Already have an account? <a href="login.html">Sign In</a></p>
+    </form>
+  </div>
+
+  <script src="js/register.js"></script>
+</body>
+</html>

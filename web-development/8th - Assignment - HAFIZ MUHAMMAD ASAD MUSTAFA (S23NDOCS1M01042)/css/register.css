@@ -1,0 +1,124 @@
+body {
+  background-image: url(../images.jpg);
+  background-size: cover;
+  color: #ffffff5d;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgba(255, 255, 255, 0.362);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); 
+}
+.container {
+  background: #1a19197c;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 0 10px #111;
+}
+h2 {
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 1px solid #ffcc00;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #ffffff;
+}
+input, select {
+  width: 100%;
+  padding: 10px;
+  color: #ffffff;
+  background: #333;
+  border: none;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover { background: #e6b800; }
+a { color: #ffcc00; }
+@media (max-width: 500px) { .container { padding: 20px; } }
+
+.error {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85em;
+  color: #ffcc00;
+}
+
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    width: 85%;
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input, select {
+    font-size: 13.5px;
+    padding: 9px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  input, select {
+    font-size: 13px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+}

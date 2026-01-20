@@ -1,0 +1,482 @@
+/* --- Daa'am-ul-Hayat Custom Colors & Variables --- */
+:root {
+    --color-hayat-accent: #fcba03;
+    --color-hayat-accent-light: #fcd34d;
+    --color-hayat-text: #172b4d;
+    --color-hayat-bg-dark: #2d3748;
+    --color-hayat-bg-light: rgba(255, 255, 255, 0.1);
+    --color-hayat-card-bg: rgba(255, 255, 255, 0.95);
+    --color-hayat-text-light: #6c757d;
+    --color-hayat-border: rgba(255, 255, 255, 0.2);
+    --color-hayat-shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Global Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    background-image: url(../profilebg.jpg);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    color: #ffffff5d;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.362);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+}
+
+/* The Frosted Glass Effect Wrapper */
+.main-backdrop {
+    background-color: rgba(44, 42, 42, 0.7); 
+    backdrop-filter: blur(25px); 
+    -webkit-backdrop-filter: blur(25px); 
+    border-radius: 20px; 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4); 
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+    margin: 20px auto;
+}
+
+/* --- Header & Navigation --- */
+.navbar-top {
+    background: var(--color-hayat-bg-dark);
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-search {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 8px 15px;
+    width: 300px;
+}
+
+.navbar-search input {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    width: 100%;
+    outline: none;
+}
+
+.navbar-search input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-search i {
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 8px;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.user-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.user-role {
+    font-size: 0.8rem;
+    color: var(--color-hayat-accent);
+}
+
+/* --- User Welcome Section --- */
+.welcome-section {
+    background: linear-gradient(135deg, rgba(252, 186, 3, 0.2) 0%, rgba(44, 42, 42, 0.5) 100%);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.welcome-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, var(--color-hayat-accent) 0%, transparent 70%);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: #e6e6e6d9;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    color: #e6e6e6d9;
+}
+
+/* --- Content Container --- */
+.content-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+}
+
+/* --- Profile Card --- */
+.profile-card {
+    background: var(--color-hayat-card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    color: var(--color-hayat-text);
+    position: relative;
+    height: fit-content;
+}
+
+.profile-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid white;
+    outline: 4px solid var(--color-hayat-accent);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+.profile-header {
+    padding: 20px 30px 10px;
+    text-align: center;
+}
+
+.profile-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.profile-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-hayat-text-light);
+}
+
+/* --- Role Badges --- */
+.role-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.badge-hayat {
+    background-color: var(--color-hayat-accent);
+    color: var(--color-hayat-text);
+    font-weight: 700;
+    border-radius: 50rem;
+    padding: 8px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 0.85rem;
+}
+
+/* --- Stats Section --- */
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-hayat-accent);
+    display: block;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--color-hayat-text-light);
+    margin-top: 5px;
+}
+
+/* --- Buttons --- */
+.btn-hayat-accent {
+    color: var(--color-hayat-text);
+    border: none;
+    background-color: var(--color-hayat-accent);
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 10px rgba(252, 186, 3, .4);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+.btn-hayat-accent:hover {
+    background-color: #e0ac02;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(252, 186, 3, .6);
+}
+
+.profile-actions {
+    padding: 20px;
+    text-align: center;
+}
+
+/* --- Form Section --- */
+.form-card {
+    background: var(--color-hayat-card-bg);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    color: var(--color-hayat-text);
+}
+
+.form-header {
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-hayat-accent);
+    margin: 0;
+}
+
+.form-body {
+    padding: 30px;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    color: var(--color-hayat-text-light);
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--color-hayat-accent);
+    border-radius: 3px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-hayat-text);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background: white;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-hayat-accent);
+    box-shadow: 0 0 0 3px rgba(252, 186, 3, 0.2);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.form-col {
+    flex: 1;
+    padding: 0 10px;
+    min-width: 200px;
+}
+
+.form-divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 30px 0;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .main-backdrop {
+        padding: 20px;
+    }
+    
+    .content-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .navbar-top {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navbar-search {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .welcome-section h1 {
+        font-size: 2rem;
+    }
+    
+    .profile-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .welcome-section {
+        padding: 20px;
+    }
+    
+    .form-body {
+        padding: 20px;
+    }
+    
+    .form-col {
+        flex: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .form-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .form-header .btn-hayat-accent {
+        align-self: flex-end;
+    }
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Story & Style Task</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8fafc, #e0e7ff);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      background: #ffffff39;
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      max-width: 1400px;
+      line-height: 1.6;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #555;
+      transition: all 0.5s ease;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #textbtn ,#font-familybtn, #colorbtn, #Maximizebtn, #Minimizebtn, #restorebtn, #alertbtn {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+    }
+
+    #textBtn :hover ,#font-familybtn :hover , #colorbtn :hover, #Maximizebtn :hover, #Minimizebtn :hover, #restorebtn :hover, #alertbtn :hover {
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header><h3>Created by Hafiz Muhammad Asad Mustafa <hr> S23NDOCS1M01042 </h3></header>
+
+    <h1>5th Assignment</h1>
+    
+        <div class="btn-group">
+          <button id="textbtn">Change Story</button>
+          <button id="font-familybtn">Change Font Family</button>
+          <button id="colorbtn">Change Font Color</button>
+          <button id="Maximizebtn">Maximize Font Color</button>
+          <button id="Minimizebtn">Minimize Font Color</button>
+          <button id="restorebtn">Restore Default</button>
+        </div>
+        
+        <p id="dynamicText" style="font-size: 18px;">Click the buttons below to change this story and style!</p>
+
+         <div class="btn-group">
+          <button id="alertbtn">Alert Button</button>
+        </div>
+        
+        <footer>Created by Hafiz Muhammad Asad Mustafa <hr> S23NDOCS1M01042 </footer>
+  </div>
+
+  <script>
+    const textButton = document.getElementById('textbtn');
+    const fontFamilyButton = document.getElementById('font-familybtn');
+    const colorButton = document.getElementById('colorbtn');
+    const MaximizeButton = document.getElementById('Maximizebtn');
+    const MinimizeButton = document.getElementById('Minimizebtn');
+    const paragraph = document.getElementById('dynamicText');
+
+    const messages = [
+      `<b>Dead Girl</b><br>
+      Outside the funeral home, I heard a boy say that she had fallen off the back of her boyfriend’s motorcycle. Broken her neck. She never knew what hit her, he said. I was 13. The dead girl had been a junior in high school.<br>
+      The line to see her snaked around the building. Boys with long hair, wearing ties they’d borrowed from their fathers, and girls with thick blue eyeshadow smoked cigarettes in the parking lot. Someone passed a bottle of Jack. There were no adults there, just very old kids.<br>
+      She almost looked like she was sleeping, except that she was too still. There was a puffiness to her face that didn’t seem quite right. They had dressed her for the prom; the crinoline sleeves of her gown like poofs of pink cotton candy. Some kids prayed, but I couldn’t. I just stared at the roses in her corsage.`,
+
+      `<b>Magic Show</b><br>
+      “Come on! It’s starting!” Greg, my neighbor, hollered from the sidewalk.<br>
+      “What’s starting?” I said. Behind him, groups of kids hurried down the street.<br>
+      We’d moved to the neighborhood just weeks before. I was shy; a bookworm, waiting for school to start. Greg was the only kid I’d met.<br>
+      “The magic show!” said Greg, exasperated. “At Mr. Hale’s house!”<br>
+      At the end of the Hales’ dirt driveway, rows of kids were seated on the grass.<br>
+      White-haired and very thin, Mr. Hale wore a black top-hat and tails. In his hand he gripped a wand, producing doves from an urn. He asked for a volunteer to be sawed in half. I raised my hand. No one breathed.<br>
+      “Just relax,” Mr. Hale whispered. “There’s nothing to it.” I got into the box and held my breath.<br>
+      A collective gasp went up. And when I emerged in one piece, I was a star.`,
+
+      `<b>Cat in the Wall</b><br>
+      “How’d he get in there?” said Amy, peering into the opening in the basement wall with her hands cupped around her eyes.<br>
+      “Got me,” I said, taking a look. Barney, our 18-pound Maine Coon, peered up at me with his yellow eyes. The cat had squeezed his massive frame through an opening in the wall that an animal half his size would have had trouble with. He was trapped.<br>
+      “What are we going to do?” said Amy. “We can’t just leave him there.”<br>
+      A metallic aroma, the scent of panic, perfumed the damp cellar air. She was right. We couldn’t leave him. But we wouldn’t get him out without tearing down the wall, and we were only summer tenants.<br>
+      The cat let out a mournful meow.<br>
+      “Barney’s going to die!” Amy cried.<br>
+      So, I brushed the tears away from her little cheeks and grabbed the hammer from the toolbox.`
+    ];
+
+    const colors = ["#ff4b5c", "#3f51b5", "#00bcd4", "#4caf50", "#ff9800", "#9c27b0"];
+    const fonts = ["Poppins", "Georgia", "Times New Roman", "Arial", "Comic Sans MS"];
+    let fsize = parseInt(paragraph.style.fontSize);
+
+    // Change story
+    textButton.addEventListener('click', () => {
+      const randomIndex = Math.floor(Math.random() * messages.length);
+      paragraph.innerHTML = messages[randomIndex];
+    });
+
+    // Change Font Family
+    fontFamilyButton.addEventListener('click', () => {
+      const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+      paragraph.style.fontFamily = randomFont;
+    });
+
+    //change Font Color
+    colorButton.addEventListener('click', () => {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      paragraph.style.color = randomColor;
+    });
+
+    //Mazimize Font Size
+    MaximizeButton.addEventListener('click', () => {
+      const currentSize = parseFloat(window.getComputedStyle(paragraph).fontSize);
+      paragraph.style.fontSize = (currentSize + 2) + "px";
+    });
+
+    //Minimize Font Size
+    MinimizeButton.addEventListener('click', () => {
+      const currentSize = parseFloat(window.getComputedStyle(paragraph).fontSize);
+      paragraph.style.fontSize = (currentSize - 2) + "px";
+    });
+
+    const restoreButton = document.getElementById('restorebtn');
+
+    // Store the initial/default styles
+    const defaultText = "Click the buttons below to change this story and style!";
+    const defaultFontSize = "18px";
+    const defaultFontFamily = "Poppins";
+    const defaultColor = "#555";
+
+    // Restore everything to default
+    restoreButton.addEventListener('click', () => {
+      paragraph.innerHTML = defaultText;
+      paragraph.style.fontSize = defaultFontSize;
+      paragraph.style.fontFamily = defaultFontFamily;
+      paragraph.style.color = defaultColor;
+    });
+
+    const alertButton = document.getElementById('alertbtn');
+
+  // Some fun or motivational messages
+  const AMessages = "kysa lga myra mazaq 😂😂😂😂";
+
+  alertButton.addEventListener('click', () => {
+    const randomMsg = AMessages;
+    alert(randomMsg);
+  });
+    
+
+  </script>
+</body>
+</html>

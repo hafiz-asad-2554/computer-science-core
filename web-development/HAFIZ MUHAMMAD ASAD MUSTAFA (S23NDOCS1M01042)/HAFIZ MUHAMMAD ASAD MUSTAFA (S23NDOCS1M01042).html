@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1st Assignment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+            margin: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        .skills ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills li {
+            background-color: #f4f4f4;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>HAFIZ MUHAMMAD ASAD MUSTAFA (S23NDOCS1M01042)</h1>
+    <p>1st Assignment</p>
+</header>
+
+<nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <img src="abcd.jpg" alt="Profile Picture" width="80px" style="display: inline ;" />
+    <div style="display: inline;">
+    <p>Hi, I'm HAFIZ MUHAMMAD ASAD MUSTAFA (S23NDOCS1M01042), a passionate web developer. I love coding and creating solutions that make life easier. I specialize in front-end development with a focus on creating beautiful and functional websites.</p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <ul>
+            <li><strong>HTML5</strong> - Building the structure of websites</li>
+            <li><strong>CSS3</strong> - Styling websites with modern techniques</li>
+            <li><strong>JavaScript</strong> - Adding interactivity to websites</li>
+            <li><strong>React</strong> - Building dynamic user interfaces</li>
+            <li><strong>Node.js</strong> - Server-side development</li>
+        </ul>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <p>Here are a few projects I've worked on:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Project Name</th>
+                <th>Description</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Personal Portfolio</td>
+                <td>A simple portfolio showcasing my work and skills.</td>
+                <td><a href="https://www.example.com">View Project</a></td>
+            </tr>
+            <tr>
+                <td>Weather App</td>
+                <td>An app that shows weather data based on user input.</td>
+                <td><a href="https://www.example.com">View Project</a></td>
+            </tr>
+            <tr>
+                <td>Task Manager</td>
+                <td>A task management app built with React and Node.js.</td>
+                <td><a href="https://www.example.com">View Project</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <form action="submit_form.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+
+        <input type="submit" value="Send Message">
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 HAFIZ MUHAMMAD ASAD MUSTAFA (S23NDOCS1M01042). All rights reserved.</p>
+</footer>
+
+</body>
+</html>

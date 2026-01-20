@@ -1,0 +1,49 @@
+.label {
+    -fx-font-size: 16;
+    font-size: 16;
+    -fx-text-fill: red;
+    -fx-border-radius: 5;
+    border-radius: 5;
+    -fx-font-family: 'Arial Black';
+    font-family: 'Arial Black';
+    -fx-font-weight: bold;
+    font-weight: bold;
+}
+
+.button {
+    -fx-background-color: red;
+    background-color: red;
+    -fx-padding: 5 20;
+    padding: 5 20;
+    -fx-border-radius: 25px;
+    border-radius: 25px;
+    -fx-text-fill: white;
+}
+
+#tfirst,
+#tlast {
+    -fx-border-color: transparent transparent red transparent;
+    border-color: red;
+    -fx-text-fill: red;
+    -fx-padding: 5 15;
+    padding: 5 15;
+    -fx-font-family: 'Arial Black';
+    font-family: Arial, Helvetica, sans-serif;
+    -fx-background-color: transparent;
+    background-color: transparent;
+    -fx-border-width: 2px;
+    border-width: 2px;
+    -fx-border-radius: 15;
+    border-radius: 15;
+}
+
+.root {
+    background-color: rgb(191, 64, 106);
+    -fx-background-color: rgb(13, 12, 100);
+    padding: 30 40;
+    -fx-padding: 30 40;
+}
+
+.button:hover{
+    -fx-effect: dropshadow(one-pass-box, GREEN, 8, 0.0, 2, 0);
+}

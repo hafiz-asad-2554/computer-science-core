@@ -1,0 +1,12 @@
+.root {
+    padding: 0 40;
+    -fx-padding: 0 40;
+    background-color: #ccc;
+    -fx-background-color: #ccc;
+}   
+.button {
+    -fx-background-color: orange;
+    background-color: orange;
+    padding: 5 45;
+    -fx-padding: 5 45;
+}
